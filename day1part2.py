@@ -1,3 +1,5 @@
+import time
+
 with open("teste.txt", "r") as f:
     conteudo = f.readlines()
 
@@ -6,6 +8,8 @@ soma = 0
 frequencias = []
 
 continua = True
+
+start_time = time.time()
 
 while continua:
     for v in conteudo:
@@ -25,6 +29,6 @@ while continua:
 
 print(soma)
 
-print("teste")
+print("%s segundos" % (time.time() - start_time))
 
 #CODIGO SUPER LENTO, LEVOU MINUTOS PARA EXECUTAR
