@@ -158,3 +158,19 @@ for g in guardas:
 print("Id do guarda que mais dormiu: {0}".format(guarda_que_mais_dormiu.id))
 print("Total de minutos dormidos: {0}".format(guarda_que_mais_dormiu.total_minutos_dormidos()))
 print("Minuto que mais dormiu: {0}".format(guarda_que_mais_dormiu.minuto_mais_dormido()))
+
+#parte 2
+#não está funcionando. seria pq empata esse mesmo minuto com outro guarda, e entao teriamos que buscar o segundo maior valor? nao sei. testar.
+
+guarda_que_mais_dormiu_em_um_mesmo_minuto = None
+
+for g in guardas:
+    if guarda_que_mais_dormiu_em_um_mesmo_minuto == None:
+        guarda_que_mais_dormiu_em_um_mesmo_minuto = g
+    else:
+        if g.minutosdormidos[g.minuto_mais_dormido()] > guarda_que_mais_dormiu_em_um_mesmo_minuto.minutosdormidos[guarda_que_mais_dormiu_em_um_mesmo_minuto.minuto_mais_dormido()]:
+            guarda_que_mais_dormiu_em_um_mesmo_minuto = g
+
+print("Parte 2")
+print("Id do guarda que mais dormiu em um mesmo minuto: {0}".format(guarda_que_mais_dormiu_em_um_mesmo_minuto.id))
+print("Minuto que mais dormiu: {0}".format(guarda_que_mais_dormiu_em_um_mesmo_minuto.minuto_mais_dormido()))
